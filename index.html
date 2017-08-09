@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Validation Test</title>
+  </head>
+  <body>
+
+      <form id="testForm" action="" method="GET">
+        <label for="GET-name">Day of the Week (e.g. Monday):</label><br>
+        <input class="js-form-isValidDayWord" id="GET-day" type="text" name="day">
+        <input type="submit" value="Submit">
+      </form>
+
+  </body>
+
+  <script src="js/FormElement.js"></script>
+  <script src="js/FormRules.js"></script>
+  <script src="js/Form.js"></script>
+
+  <script>
+    window.onload = () => {
+      // New up the form
+      const form = new Form("#testForm", validForm, invalidForm);
+
+      // The callback for form validation failure
+      function invalidForm() {
+        alert("invalid form");
+      }
+
+      function validForm() {
+        alert("Valid!");
+      }
+
+    };
+</script>
+
+</html>
