@@ -15,16 +15,16 @@ class Form {
     this.onInvalidCallbackFn = onInvalidCallbackFn;
     this.onValidCallbackFn = onValidCallbackFn;
 
-    // Add event listener to form and prevent default
+    // Validate the form on submission
     this.form.addEventListener("submit", (e) => {
-      // Validate the form on submission
       if (this.isValid()) {
         this.onValidCallbackFn();
         return true;
       } else {
+        // Prevent form from performing default action
         e.preventDefault();
         // TODO: pass a list of elements which failed valid testing
-        this.onInvalidCallbackFn();
+        this.onInvalidCallbackFn( this.getInvalidElements() );
         return false;
       }
     });
@@ -40,6 +40,19 @@ class Form {
       }
     });
     return validity;
+  }
+
+
+  getInvalidElements() {
+    // Default validity to false
+    let invalidElements = [];
+    // iterate over each form element and check its validity;
+    this.elements.forEach( (element) => {
+      if (! element.isValid()) {
+        invalidElements.push(element.getElement());
+      }
+    });
+    return invalidElements;
   }
 
   getElements() {

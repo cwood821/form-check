@@ -56,6 +56,7 @@ class FormRules {
     const minDayNum = 1;
     const maxDayNum = 31;
     const number = parseInt(val);
+
     if (number <= maxDayNum && number >= minDayNum) {
       return true;
     }
@@ -65,11 +66,11 @@ class FormRules {
   static isValidDayWord(val) {
     const dayWords = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 
-    if (!FormRules.hasValue(val)) {
+    if (! FormRules.hasValue(val)) {
       return false;
     }
 
-    if ( dayWords.includes(val.toLowerCase()) ) {
+    if (dayWords.includes(val.toLowerCase())) {
       return true;
     }
 

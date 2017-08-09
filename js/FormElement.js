@@ -16,6 +16,11 @@ class FormElement {
   }
 
 
+  getElement() {
+    return this.element;
+  }
+
+
   // Associate rules
   associateRules() {
     // Parse out CSS class names from element
