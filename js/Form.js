@@ -30,6 +30,7 @@ class Form {
     });
   }
 
+
   isValid() {
     // Default validity to false
     let validity = true;
@@ -55,37 +56,28 @@ class Form {
     return invalidElements;
   }
 
+
   getElements() {
     return this.elements;
   }
 
+
   getFormElements() {
-    let elements = [];
     // If the form is invalid, abandon the function
-    if (!this.form) {
+    if (! this.form) {
       return [];
     }
 
     // Get all form elements, check for inputs, option-select, and textareas
     // Array.prototype.slice.call() turns a nodelist into an array
-    const inputs = Array.prototype.slice.call(
-      this.form.querySelectorAll("input")
+    const elements = Array.prototype.slice.call(
+      this.form.querySelectorAll("[data-form-check-rules]")
     );
-    const textareas = Array.prototype.slice.call(
-      this.form.querySelectorAll("textarea")
-    );
-    const selects = Array.prototype.slice.call(
-      this.form.querySelectorAll("select")
-    );
-
-    // Concatenate all form elements
-    elements = elements.concat(inputs);
-    elements = elements.concat(textareas);
-    elements = elements.concat(selects);
 
     // Return array of references to these elements
     return elements;
   }
+
 
   // Return an array of FormElement objects based on elemnts in this form
   constructElements() {

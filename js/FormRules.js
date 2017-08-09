@@ -13,9 +13,9 @@ class FormRules {
   // Return the full list of rules and associated functions as an object
   static getRules() {
     return {
-      "js-form-hasValue": this.hasValue,
-      "js-form-isValidDayWord": this.isValidDayWord,
-      "js-form-isValidDayNumber": this.isValidDayNumber
+      "hasValue": this.hasValue,
+      "isValidDayWord": this.isValidDayWord,
+      "isValidDayNumber": this.isValidDayNumber
     };
   }
 

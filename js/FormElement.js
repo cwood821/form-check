@@ -23,13 +23,20 @@ class FormElement {
 
   // Associate rules
   associateRules() {
+    // Be sure the element has rules attached
+    if (! this.element.dataset["formCheckRules"]) {
+      return false;
+    }
+    // Grab the rules from the element
+    const rulesString = this.element.dataset.formCheckRules.toString();
+    const rules = rulesString.split(" ");
     // Parse out CSS class names from element
-    this.element.classList.forEach( (className) => {
+    rules.forEach( (ruleName) => {
       // Parse out CSS class names from element
-      if (FormRules.hasRule(className)) {
+      if (FormRules.hasRule(ruleName)) {
         // Push associated rule function onto list of this
         // elements rules
-        this.addRule(FormRules.getRuleFn(className));
+        this.addRule(FormRules.getRuleFn(ruleName));
       }
     });
   }
