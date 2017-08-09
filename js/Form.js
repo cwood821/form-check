@@ -1,32 +1,29 @@
 /*
 
   -- Form Class --
-  
-  Construct a form based on a CSS selector and a callback
-  function for form failure.
+
+  Construct a form based on a CSS selector and callback
+  functions for form validation success and failure.
 
 */
 
 class Form {
-  // Constructs a form object given a CSS selector.
-  constructor(selector, onValidCallbackFn, onInvalidCallbackFn) {
+  // Constructs a form object given a CSS selector, defaults callbacks to anonymous functions
+  constructor(selector, onValidCallbackFn = function(){}, onInvalidCallbackFn = function(){}) {
     this.form = document.querySelector(selector);
-
     this.elements = this.constructElements();
     this.onInvalidCallbackFn = onInvalidCallbackFn;
+    this.onValidCallbackFn = onValidCallbackFn;
 
     // Add event listener to form and prevent default
     this.form.addEventListener("submit", (e) => {
-      // e.preventDefault();
-
       // Validate the form on submission
       if (this.isValid()) {
-        onValidCallbackFn();
+        this.onValidCallbackFn();
         return true;
       } else {
         e.preventDefault();
-        // Call the invalid callback
-        // TODO: passback list of elements which failed valid testing
+        // TODO: pass a list of elements which failed valid testing
         this.onInvalidCallbackFn();
         return false;
       }
