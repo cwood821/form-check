@@ -30,7 +30,7 @@ class FormElement {
   }
 
   addRule(ruleFn) {
-    // Escape if the rules array already has the passed function
+    // Escape if the rules array already has the given function
     if (this.rules.includes(ruleFn)) {
       return false;
     }
@@ -56,7 +56,6 @@ class FormElement {
       }
     });
 
-    // console.log(validity);
     return validity;
   }
 }

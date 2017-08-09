@@ -31,14 +31,14 @@ class Form {
   }
 
   isValid() {
+    // Default validity to false
     let validity = true;
-    // iterate over form element values and pass elements value
+    // iterate over each form element and check its validity;
     this.elements.forEach(element => {
-      if (!element.isValid()) {
+      if (! element.isValid()) {
         validity = false;
       }
     });
-    // if one of the rules fails, return false
     return validity;
   }
 
