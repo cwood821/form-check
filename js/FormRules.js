@@ -28,7 +28,7 @@ class FormRules {
     return undefined;
   }
 
-  // Check if a rule has been defined for a given CSS class
+  // Check if a rule has been defined for a given rule name
   static hasRule(ruleClass) {
     const rules = FormRules.getRules();
     if (rules[ruleClass]) {

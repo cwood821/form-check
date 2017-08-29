@@ -9,6 +9,7 @@
 
 
 class FormElement {
+  
   constructor(elReference) {
     this.element = elReference;
     this.rules = [];
@@ -41,6 +42,7 @@ class FormElement {
     });
   }
 
+
   addRule(ruleFn) {
     // Escape if the rules array already has the given function
     if (this.rules.includes(ruleFn)) {
@@ -48,6 +50,7 @@ class FormElement {
     }
     this.rules.push(ruleFn);
   }
+
 
   removeRule() {
     if (this.rules.includes(ruleFn)) {
@@ -57,6 +60,7 @@ class FormElement {
     const ruleIndex = this.rules.indexOf(ruleFn);
     this.rules.splice(ruleIndex, 1);
   }
+
 
   isValid() {
     let validity = true;
