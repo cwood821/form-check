@@ -17,14 +17,12 @@
 
   </body>
 
-  <script src="js/FormElement.js"></script>
-  <script src="js/FormRules.js"></script>
-  <script src="js/Form.js"></script>
+  <script src="public/formcheck.js"></script>
 
   <script>
     window.onload = () => {
       // New up the form
-      const form = new Form("#testForm", validForm, invalidForm);
+      const form = new formCheck.Form("#testForm", validForm, invalidForm);
 
       // The callback for form validation failure
       function invalidForm(elements) {

@@ -8,7 +8,7 @@
 
 */
 
-class FormRules {
+export default class FormRules {
 
   // Return the full list of rules and associated functions as an object
   static getRules() {

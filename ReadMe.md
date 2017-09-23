@@ -13,6 +13,8 @@ Available rules:
 On failure, invalid elements will be passed back to the
 invalidForm callback function.
 
+To use the library in your own projects, include the bundled public/formcheck.js in your project.
+
 It is currently in development. For a fully-featured library, explore something
 like [Parsely](http://parsleyjs.org/).
 
@@ -26,7 +28,7 @@ The demo uses the following code:
 
 window.onload = () => {
   // Target the HTML form
-  const form = new Form("#testForm", validForm, invalidForm);
+  const form = new formCheck.Form("#testForm", validForm, invalidForm);
 
   // The callback for form validation failure
   function invalidForm(elements) {

@@ -7,9 +7,10 @@
 
 */
 
+import FormRules from './FormRules';
 
-class FormElement {
-  
+export default class FormElement {
+
   constructor(elReference) {
     this.element = elReference;
     this.rules = [];

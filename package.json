@@ -1,0 +1,33 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "description": "A simple js library for front-end form validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwood821/form-check.git"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Christian Wood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cwood821/form-check/issues"
+  },
+  "homepage": "https://github.com/cwood821/form-check#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "webpack": "^3.6.0"
+  }
+}

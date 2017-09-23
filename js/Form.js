@@ -7,7 +7,9 @@
 
 */
 
-class Form {
+import FormElement from './FormElement';
+
+export class Form {
   // Constructs a form object given a CSS selector, defaults callbacks to anonymous functions
   constructor(selector, onValidCallbackFn = function(){}, onInvalidCallbackFn = function(){}) {
     this.form = document.querySelector(selector);
