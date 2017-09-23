@@ -14,12 +14,11 @@ On failure, invalid elements will be passed back to the
 invalidForm callback function.
 
 To use the library in your own projects, include the bundled public/formcheck.js in your project.
-
-It is currently in development. For a fully-featured library, explore something
+Please note, however, that it is currently in development. For a fully-featured library, explore something
 like [Parsely](http://parsleyjs.org/).
 
 ## Demo
-To try out the demo, download or clone this repository and open the index.html
+To try out the demo, download or clone this repository and open the public/index.html
 in your browser.
 
 The demo uses the following code:
